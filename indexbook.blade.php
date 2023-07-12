@@ -32,7 +32,6 @@
 <body>
     <a href="book">Add Book</a>
     <a href="book">Refresh</a>
-    {{-- <a href="http://127.0.0.1:8000/city"></a> --}}
     <h1>Show All Book Details</h1>
     <table>
         <thead>
@@ -49,8 +48,9 @@
                     <td>{{ $book->id }}</td>
                     <td>{{ $book->name }}</td>
                     <td>{{ $book->author }}</td>
-                    <td><a href="edit/{{ $book->id }}">Edit</a>
-                    <a style="background:red;" href="delete/{{ $book->id }}">Delete</a></td>
+                    <td><a href="bookedit/{{ $book->id }}">Edit</a>
+                    <a style="background:red;" href="bookdelete/{{ $book->id }}">Delete</a>
+                    <a style="background:rgb(131, 219, 43);" href="past/{{ $book->id }}">Last take-out</a></td>
                 </tr>
             @endforeach
         </tbody>
