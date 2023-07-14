@@ -6,20 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reader</title>
-    <style>
-        .error {
-            color: red;
-            font-size: 12px;
-            margin-top: 4px;
-        }
-
-        .error1 {
-            border: 1px solid red;
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('/reader.css')}}">
 </head>
 
 <body>
+    <div class="container">
     <h1>Reader</h1>
     <form action="/readerkpage" method="post">
         <div class="form_group">
@@ -39,7 +30,7 @@
         <button type="submit">Submit</button>
         @csrf
     </form>
-
+</div>
 
 </body>
 

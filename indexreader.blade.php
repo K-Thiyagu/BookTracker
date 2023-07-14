@@ -51,7 +51,7 @@
                     <td>{{ $read->phone }}</td>
                     <td><a href="readeredit/{{ $read->id }}">Edit</a>
                         <a style="background:red;" href="readerdelete/{{ $read->id }}">Delete</a>
-                        <a style="background:rgb(131, 219, 43);" href="history/{{ $read->id }}">past history</a>
+                        <a style="background:rgb(131, 219, 43);" href="history/{{ $read->id }}">Past History</a>
 
                     </td>
                 </tr>

@@ -41,11 +41,12 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Book_name</th>
-                <th>Reader_name</th>
+                <th>Book_Id</th>
+                <th>Reader_Id</th>
                 <th>Start_date</th>
                 <th>End_date</th>
                 <th>Feedback</th>
+                <th>No.of Days</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -58,9 +59,9 @@
                     <td>{{ $take->start_date }}</td>
                     <td>{{ $take->end_date }}</td>
                     <td>{{ $take->feedback }}</td>
+                    <td>{{ $take->numDays }}</td>
                     <td>
-                        <a href="takepageedit/{{ $take->id }}">Edit</a>
-                        {{-- <a style="background:red;" href="delete/{{ $take->id }}">Delete</a> --}}
+                        <a href="takeeditpage/{{ $take->id }}">Edit</a>
                     </td>
                 </tr>
             @endforeach

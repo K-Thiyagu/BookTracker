@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookTrackerController;
-use App\Models\Takeout;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,9 +45,9 @@ use Illuminate\Support\Facades\Route;
 
   Route::post('/takepage',[BookTrackerController::class,'inserttake']);
 
-  Route::get('/takepageedit/{id}', [BookTrackerController::class, 'takeedit']);
+  Route::get('/takeeditpage/{id}', [BookTrackerController::class, 'TakeOutEdit']);
 
-//   Route::post('/update/{id}', [BookTrackerController::class, 'readerupdate']);
+  Route::post('/updateEdit/{id}', [BookTrackerController::class, 'updateTakeOut']);
 
   Route::get('/indexbook',[BookTrackerController::class,'indexbook']);
 
