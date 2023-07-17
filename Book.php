@@ -9,4 +9,28 @@ class Book extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function takeout()
+    {
+        return $this->hasMany(Takeout::class);
+    }
+    //reader--->history
+    public function book()
+    {
+        return $this->belongsTo(Book::class);
+    }
+
+
+    public function takeouts()
+    {
+        return $this->hasMany(Takeout::class);
+    }
+
+
+    //reader - book = one
+    public function borrows()
+    {
+        return $this->hasMany(Takeout::class);
+    }
+
 }

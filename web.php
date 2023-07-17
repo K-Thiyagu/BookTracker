@@ -19,45 +19,44 @@ use Illuminate\Support\Carbon;
 //     // return view('welcome');
 // });
 
-  Route::get('/',[BookTrackerController::class,'main']);
+Route::get('/', [BookTrackerController::class, 'main']);
 
-  Route::get('/book',[BookTrackerController::class,'book']);
+Route::get('/book', [BookTrackerController::class, 'book']);
 
-  Route::post('/bookpage',[BookTrackerController::class,'insertbook']);
+Route::post('/bookpage', [BookTrackerController::class, 'insertbook']);
 
-  Route::get('/bookedit/{id}', [BookTrackerController::class, 'bookedit']);
+Route::get('/bookedit/{id}', [BookTrackerController::class, 'bookedit']);
 
-  Route::post('/bookupdate/{id}', [BookTrackerController::class, 'bookupdate']);
+Route::post('/bookupdate/{id}', [BookTrackerController::class, 'bookupdate']);
 
-  Route::get('bookdelete/{id}', [BookTrackerController::class, 'bookdel']);
+Route::get('bookdelete/{id}', [BookTrackerController::class, 'bookdel']);
 
-  Route::get('/reader',[BookTrackerController::class,'reader']);
+Route::get('/reader', [BookTrackerController::class, 'reader']);
 
-  Route::post('/readerkpage',[BookTrackerController::class,'insertReader']);
+Route::post('/readerkpage', [BookTrackerController::class, 'insertReader']);
 
-  Route::get('/readeredit/{id}', [BookTrackerController::class, 'readeredit']);
+Route::get('/readeredit/{id}', [BookTrackerController::class, 'readeredit']);
 
-  Route::post('/update/{id}', [BookTrackerController::class, 'readerupdate']);
+Route::post('/update/{id}', [BookTrackerController::class, 'readerupdate']);
 
-  Route::get('readerdelete/{id}', [BookTrackerController::class, 'readerdel']);
+Route::get('readerdelete/{id}', [BookTrackerController::class, 'readerdel']);
 
-  Route::get('/takeout',[BookTrackerController::class,'takeout']);
+Route::get('/takeout', [BookTrackerController::class, 'takeout']);
 
-  Route::post('/takepage',[BookTrackerController::class,'inserttake']);
+Route::post('/takepage', [BookTrackerController::class, 'inserttake']);
 
-  Route::get('/takeeditpage/{id}', [BookTrackerController::class, 'TakeOutEdit']);
+Route::get('/takeeditpage/{id}', [BookTrackerController::class, 'TakeOutEdit']);
 
-  Route::post('/updateEdit/{id}', [BookTrackerController::class, 'updateTakeOut']);
+Route::post('/updateEdit/{id}', [BookTrackerController::class, 'updateTakeOut']);
 
-  Route::get('/indexbook',[BookTrackerController::class,'indexbook']);
+Route::get('/indexbook', [BookTrackerController::class, 'indexbook']);
 
-  Route::get('/indexreader',[BookTrackerController::class,'indexreader']);
+Route::get('/indexreader', [BookTrackerController::class, 'indexreader']);
 
-  Route::get('/indextake',[BookTrackerController::class,'indextake']);
+Route::get('/indextake', [BookTrackerController::class, 'indextake']);
 
-  Route::get('/past/{id}',[BookTrackerController::class,'past']);
+Route::get('/past/{id}', [BookTrackerController::class, 'past']);
 
-  Route::get('/history/{id}',[BookTrackerController::class,'history']);
+Route::get('/history/{id}', [BookTrackerController::class, 'history']);
 
-
-
+Route::post('/books/{bookId}/borrow/{readerId}', [BookTrackerController::class, 'borrowBook'])->name('borrow');

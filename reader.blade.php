@@ -11,18 +11,18 @@
 
 <body>
     <div class="container">
-    <h1>Reader</h1>
+    <h1>Reader Form</h1>
     <form action="/readerkpage" method="post">
         <div class="form_group">
             <label for="name">Name:</label>
-            <input type="text" name="name" id="name" class="@error('name') error1 @enderror" />
+            <input type="text" name="name" id="name" value="{{ old('name')}}" class="@error('name') error1 @enderror" />
             @error('name')
                 <div class="error">{{ $message }}</div>
             @enderror
         </div>
         <div class="form_group">
             <label for="phone">Phone:</label>
-            <input type="number" name="phone" id="phone" class="@error('phone') error1 @enderror" />
+            <input type="number" name="phone" id="phone" value="{{ old('phone')}}" class="@error('phone') error1 @enderror" />
             @error('phone')
                 <div class="error">{{ $message }}</div>
             @enderror

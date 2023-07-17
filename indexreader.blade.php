@@ -5,35 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Reader</title>
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/index.css') }}">
+    <link rel="stylesheet" href="{{ asset('/indexreader.css') }}">
 </head>
-<style>
-    table,
-    th,
-    td {
-        border: 1px solid black;
-        border-collapse: collapse;
-    }
-
-    td {
-        padding: 5px;
-
-    }
-
-    a {
-        text-decoration: none;
-        font-size: 15px;
-        background-color: blue;
-        color: white;
-        padding: 2px;
-        border-radius: 3px;
-    }
-</style>
 
 <body>
     <a href="reader">Add Reader</a>
-    <a href="reader">Refresh</a>
-    <h1>Show All Reader Details</h1>
+    <a href="indexreader">Refresh</a>
+    <h1  style="margin-top: 10px;text-align:center;">Show All Reader Details</h1>
     <table>
         <thead>
             <tr>

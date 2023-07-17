@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="container">
-     <h4><span>E-Sandhai</span>  Dashboard</h4>
+     <h4>BookTracker</h4>
      <div class="link">
         <ul>
         <li><a href="indexbook"> Index Book </a></li>

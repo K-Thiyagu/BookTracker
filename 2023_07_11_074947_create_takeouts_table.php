@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('book_id');
             $table->string('reader_id');
             $table->date('start_date');
-            $table->date('end_date');
-            $table->string('feedback');
+            $table->date('end_date')->nullable();
+            $table->string('feedback')->nullable();
             $table->timestamps();
         });
     }
