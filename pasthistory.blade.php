@@ -30,8 +30,8 @@
                     <td>{{ $historys->reader->name ?? 'none' }}</td>
                     <td>{{ $historys->book->name ?? 'none' }}</td>
                     <td>{{ $historys->start_date ?? 'none' }}</td>
-                    <td>{{ $historys->end_date ?? 'none' }}</td>
-                    <td>{{ $historys->feedback ?? 'none' }}</td>
+                    <td>{{ $historys->end_date ?? 'Pending' }}</td>
+                    <td>{{ $historys->feedback ?? 'Pending' }}</td>
                 </tr>
             @endforeach
         </tbody>

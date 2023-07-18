@@ -15,9 +15,7 @@ use Illuminate\Support\Carbon;
 |
 */
 
-// Route::get('/', function () {
-//     // return view('welcome');
-// });
+
 
 Route::get('/', [BookTrackerController::class, 'main']);
 
@@ -47,7 +45,7 @@ Route::post('/takepage', [BookTrackerController::class, 'inserttake']);
 
 Route::get('/takeeditpage/{id}', [BookTrackerController::class, 'TakeOutEdit']);
 
-Route::post('/updateEdit/{id}', [BookTrackerController::class, 'updateTakeOut']);
+Route::post('/updateEdit/{id}', [BookTrackerController::class, 'Takeupdate']);
 
 Route::get('/indexbook', [BookTrackerController::class, 'indexbook']);
 
@@ -59,4 +57,3 @@ Route::get('/past/{id}', [BookTrackerController::class, 'past']);
 
 Route::get('/history/{id}', [BookTrackerController::class, 'history']);
 
-Route::post('/books/{bookId}/borrow/{readerId}', [BookTrackerController::class, 'borrowBook'])->name('borrow');

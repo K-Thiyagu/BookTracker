@@ -14,12 +14,12 @@ class Book extends Model
     {
         return $this->hasMany(Takeout::class);
     }
+
     //reader--->history
     public function book()
     {
         return $this->belongsTo(Book::class);
     }
-
 
     public function takeouts()
     {
@@ -27,10 +27,6 @@ class Book extends Model
     }
 
 
-    //reader - book = one
-    public function borrows()
-    {
-        return $this->hasMany(Takeout::class);
-    }
+
 
 }

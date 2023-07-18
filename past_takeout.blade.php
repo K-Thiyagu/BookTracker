@@ -12,7 +12,7 @@
 
 <body>
 
-<h2>Past Takeouts for Book: {{ $book->name }}</h2>
+<h2>Past Takeouts for Book : <span> {{ $book->name }} </span></h2>
 @if ($pastTakeouts->isEmpty())
     <p>No past takeouts found for this book.</p>
 @else
@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $takeout->reader->name }}</td>
                     <td>{{ $takeout->start_date }}</td>
-                    <td>{{ $takeout->end_date }}</td>
+                    <td>{{ $takeout->end_date ?? 'Pending' }}</td>
                 </tr>
             @endforeach
         </tbody>

@@ -15,7 +15,13 @@
     width: 650px;
     text-align:center;
     margin: 10px auto;
+    font-size: 25px;
+    color: lightslategray;
 
+ }
+ span{
+     font-size: 26px;
+     color: #000000;
  }
 p{
     color: red;
