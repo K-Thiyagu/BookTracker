@@ -111,6 +111,7 @@ class BookTrackerController extends Controller
     {
         $book_id = Book::get();
         $reader_id = Reader::get();
+
         return view('takeout', ['book_id' => $book_id], ['reader_id' => $reader_id]);
     }
 
@@ -118,7 +119,7 @@ class BookTrackerController extends Controller
     {
         $request->validate(
             [
-                'book_id' => ['required','unique:Takeouts,Book_Id'],
+                'book_id' => ['required', 'unique:Takeouts,Book_Id'],
                 'reader_id' => ['required'],
                 'start_date' => ['required', 'date'],
             ]
@@ -147,6 +148,7 @@ class BookTrackerController extends Controller
             ]
         );
         $borrow->save();
+
         return 'Record Insert Successfully ! <a href = "/takeout">Click here go to back </a>';
     }
 
@@ -174,6 +176,7 @@ class BookTrackerController extends Controller
 
         $takeout = Takeout::find($id);
         $takeout->update($validatedtake);
+
         return 'user update successfully !<a href="/indextake">Click here list</a>';
     }
 
@@ -193,7 +196,7 @@ class BookTrackerController extends Controller
     {
         $books = Book::with('takeout')->get();
         $readers = Reader::with('takeout')->get();
-        $takeouts = Takeout::get();
+        $takeouts = Takeout::all();
         foreach ($takeouts as $data) {
             $start = Carbon::parse($data->start_date);
             $end = Carbon::parse($data->end_date);
@@ -221,5 +224,24 @@ class BookTrackerController extends Controller
         $book = Book::with('book')->get();
 
         return view('pasthistory', compact('history', 'reader', 'book'));
+    }
+
+    public function fliter(Request $request)
+    {
+        $takeouts = Takeout::all();
+        foreach ($takeouts as $data) {
+            $start = Carbon::parse($data->start_date);
+            $end = Carbon::parse($data->end_date);
+            $data->numDays = $end->diffInDays($start);
+        }
+
+        $startDate =  $request->start_date;
+        $endDate = $request->end_date;
+
+        $dataEntries = Takeout::whereDate('created_at', '>=', $startDate)
+            ->whereDate('created_at', '<=', $endDate)
+            ->get();
+
+        return view('indextake', compact('takeouts', 'dataEntries'));
     }
 }

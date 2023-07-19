@@ -34,3 +34,15 @@ tr:hover {
     background-color: rgb(229, 227, 225);
     cursor: pointer;
 }
+a{
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: rgb(27, 187, 27);
+    color: #ffffff;
+    border-radius: 5px;
+    margin-left: 5%;
+    cursor: pointer;
+}
+a:hover{
+    background-color: green;
+}

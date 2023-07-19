@@ -57,3 +57,5 @@ Route::get('/past/{id}', [BookTrackerController::class, 'past']);
 
 Route::get('/history/{id}', [BookTrackerController::class, 'history']);
 
+Route::get('/fliter', [BookTrackerController::class, 'fliter']);
+

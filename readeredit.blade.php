@@ -23,7 +23,8 @@
                     <label>Phone</label></br>
                     <input type="number" name="phone" id="phone" value="{{ $readeredit->phone }}"
                         class="form-control"></br>
-                    <input type="submit" value="Update" class="btn btn-success"></br>
+                    <input type="submit" value="Update" class="btn btn-success">
+                    <a href="/indexreader" class="btn btn-success">Go Back</a>
                 </form>
             </div>
         </div>

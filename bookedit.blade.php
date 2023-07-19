@@ -3,8 +3,7 @@
 
 <head>
     <title>bookedit</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -23,7 +22,8 @@
                     <label for="author">Author:</label>
                     <input type="text" name="author" id="author" value="{{ $bookedit->author }}" class="form-control"></br>
 
-                    <input type="submit" value="Update" class="btn btn-success"></br>
+                    <input type="submit" value="Update" class="btn btn-success">
+                    <a href="/indexbook" class="btn btn-success">Go Back</a>
                 </form>
             </div>
         </div>

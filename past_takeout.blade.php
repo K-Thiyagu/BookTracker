@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Past-Out History</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ asset('/past_out.css') }}">
 
 </head>
@@ -13,6 +14,7 @@
 <body>
 
 <h2>Past Takeouts for Book : <span> {{ $book->name }} </span></h2>
+<a href="/indexbook"><i class="bi bi-arrow-left"></i> Go Back</a>
 @if ($pastTakeouts->isEmpty())
     <p>No past takeouts found for this book.</p>
 @else

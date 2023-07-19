@@ -34,7 +34,7 @@
 
                     <label for="book_id" class="fs-5 fw-normal mb-1">Book</label>
 
-                    <select id="book_id" name="book_id" class="form-control">
+                    <select id="book_id" name="book_id" class="form-select">
                         <option value="" selected disabled>--Select Here--</option>
 
                         @foreach ($book_id as $book)
@@ -46,7 +46,7 @@
 
                     <label for="reader_id" class="fs-5 mb-1">Reader</label>
 
-                    <select id="reader_id" name="reader_id" class="form-control">
+                    <select id="reader_id" name="reader_id" class="form-select">
                         <option value="" selected disabled>--Select Here--</option>
 
                         @foreach ($reader_id as $reader)

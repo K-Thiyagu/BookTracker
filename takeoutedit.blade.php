@@ -18,21 +18,21 @@
                     {!! csrf_field() !!}
 
                     <label for="book_id">Book</label></br>
-                    <select name="book_id" id="book_id" class="form-control">
-                             <option value="" selected disabled>--Select Here--</option>
-                        @foreach ($books as $book)
-                            <option value="{{ old('id', $book->id ) }}">{{ old( 'name',$book->name ?? 'none')}}</option>
-                        @endforeach
+                    <select name="book_id" id="book_id" class="form-select">
+                             {{-- <option value="" selected disabled>--Select Here--</option> --}}
+                        {{-- @foreach ($books as $book) --}}
+                            <option value="{{  $takeoutedit->book->id  }}">{{ $takeoutedit->book->name }}</option>
+                        {{-- @endforeach --}}
 
                     </select></br>
 
                     <label for="reader_id">Reader</label></br>
 
-                    <select name="reader_id" id="reader_id" class="form-control">
-                            <option value="" selected disabled>--Select Here--</option>
-                        @foreach ($readers as $reader)
-                            <option value="{{ old('id', $reader->id )}}">{{ old( 'name',$reader->name ?? 'none') }}</option>
-                        @endforeach
+                    <select name="reader_id" id="reader_id" class="form-select">
+                            {{-- <option value="" selected disabled>--Select Here--</option> --}}
+                        {{-- @foreach ($readers as $reader) --}}
+                            <option value="{{ $takeoutedit->reader->id }}">{{ $takeoutedit->reader->name }}</option>
+                        {{-- @endforeach --}}
                     </select></br>
 
                     <label for="start_date">Start_date</label>
@@ -44,15 +44,20 @@
                         class="@error('end_date') error1 @enderror" />
 
                     @error('end_date')
-                        <div class="text-danger" class="error">{{ $message }}</div></br>
+                        <div class="text-danger" class="error">{{ $message }}</div>
                     @enderror</br>
 
 
                     <label for="feedback">Feedback</label>
                     <input type="text" id="feedback" name="feedback" rows="4" cols="20"
-                        value="{{old('feedback', $takeoutedit->feedback )}}" class="form-control"></br>
+                        value="{{old('feedback', $takeoutedit->feedback )}}" class="form-control" class="@error('feedback') error1 @enderror">                        @error('feedback')
+                        <div class="text-danger" class="error">{{ $message }}</div>
+                    @enderror</br>
 
-                    <input type="submit" value="Update Takeout" class="btn btn-success"></br>
+
+                    <input type="submit" value="Update Takeout" class="btn btn-success">
+                    <a href="/indextake" class="btn btn-success">Go Back</a>
+
                 </form>
             </div>
         </div>

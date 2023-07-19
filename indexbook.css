@@ -36,7 +36,7 @@ a {
     text-decoration: none;
     font-size: 17px;
     background-color: blue;
-    color: white;
+    color: #ffffff;
     padding: 4px 4px;
     margin: 5px;
     border-radius: 3px;
@@ -46,3 +46,26 @@ tr:hover {
     background-color: rgb(229, 227, 225);
     cursor: pointer;
 }
+#icon{
+    color: #ffffff;
+    font-size: 15px;
+}
+#Histry{
+    color: #ffffff;
+    font-size: 17px;
+}
+.link{
+    margin-left: 4.5%;
+
+}
+.link a{
+    background: rgb(39, 182, 39);
+    padding: 5px 10px;
+
+}
+.link a:hover{
+    background: rgb(23, 147, 23);
+
+}
+
+
