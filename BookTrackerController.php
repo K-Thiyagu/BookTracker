@@ -182,28 +182,63 @@ class BookTrackerController extends Controller
 
     public function indexbook()
     {
-        $bookdata = Book::get();
-        return view('indexbook', ['bookdata' => $bookdata]);
+        $bookdata = Book::paginate(7);
+
+        return view('indexbook', compact('bookdata'));
     }
+    //index--->fliter
+    public function book_filter(Request $request)
+    {
+        $name = $request->input('name');
+
+        $bookdata = Book::where('name', 'like', "%{$name}%")->paginate(7); // Change the per page value as needed
+
+        return view('indexbook', compact('bookdata'));
+    }
+
 
     public function indexreader()
     {
-        $readdata = Reader::get();
-        return view('indexreader', ['readdata' => $readdata]);
+        $readdata = Reader::paginate(5);
+
+        return view('indexreader', compact('readdata'));
+    }
+    //index--->fliter
+    public function reader_filter(Request $request)
+    {
+        $name = $request->input('name');
+
+        $readdata = Reader::where('name', 'like', "%{$name}%")->paginate(5); // Change the per page value as needed
+
+        return view('indexreader', compact('readdata'));
     }
 
     public function indextake()
     {
+        $takeouts = Takeout::all();
         $books = Book::with('takeout')->get();
         $readers = Reader::with('takeout')->get();
-        $takeouts = Takeout::all();
+        foreach ($takeouts as $data) {
+            $start = Carbon::parse($data->start_date);
+            $end = Carbon::parse($data->end_date);
+            $data->numDays = $end->diffInDays($start);
+        }
+        return view('indextake', compact('takeouts'));
+    }
+    //index--->fliter
+    public function take_filter(Request $request)
+    {
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        $takeouts = Takeout::whereBetween('created_at', [$startDate, $endDate])->get();
         foreach ($takeouts as $data) {
             $start = Carbon::parse($data->start_date);
             $end = Carbon::parse($data->end_date);
             $data->numDays = $end->diffInDays($start);
         }
 
-        return view('indextake', compact('books', 'readers', 'takeouts'));
+        return view('indextake', compact('takeouts'));
     }
 
     // ------>Book Last Take OUT
@@ -224,24 +259,5 @@ class BookTrackerController extends Controller
         $book = Book::with('book')->get();
 
         return view('pasthistory', compact('history', 'reader', 'book'));
-    }
-
-    public function fliter(Request $request)
-    {
-        $takeouts = Takeout::all();
-        foreach ($takeouts as $data) {
-            $start = Carbon::parse($data->start_date);
-            $end = Carbon::parse($data->end_date);
-            $data->numDays = $end->diffInDays($start);
-        }
-
-        $startDate =  $request->start_date;
-        $endDate = $request->end_date;
-
-        $dataEntries = Takeout::whereDate('created_at', '>=', $startDate)
-            ->whereDate('created_at', '<=', $endDate)
-            ->get();
-
-        return view('indextake', compact('takeouts', 'dataEntries'));
     }
 }

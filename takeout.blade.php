@@ -10,7 +10,6 @@
 <body>
     <div class="container">
         @yield('content')
-        {{-- //error message --}}
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -65,6 +64,7 @@
                     @enderror </br>
 
                     <input type="submit" value="Save" class="btn btn-success">
+                    <a href="/indextake" class="btn btn-success">Takeout Home</a>
                 </form>
             </div>
         </div>

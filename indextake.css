@@ -29,19 +29,7 @@ th {
 td {
 
     text-align: center;
-
 }
-
-a {
-    text-decoration: none;
-    font-size: 17px;
-    background-color: blue;
-    color: white;
-    padding: 4px 4px;
-    margin: 5px;
-    border-radius: 3px;
-}
-
 tr:hover {
     background-color: rgb(229, 227, 225);
     cursor: pointer;
@@ -52,9 +40,11 @@ tr:hover {
 .link a{
     background: rgb(39, 182, 39);
     padding: 5px 10px;
+    color: #ffffff;
 }
 .link a:hover{
     background: rgb(23, 147, 23);
+    color: #ffffff;
 
 }
 #icon{

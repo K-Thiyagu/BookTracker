@@ -49,13 +49,19 @@ Route::post('/updateEdit/{id}', [BookTrackerController::class, 'Takeupdate']);
 
 Route::get('/indexbook', [BookTrackerController::class, 'indexbook']);
 
+Route::post('/indexbook', [BookTrackerController::class, 'book_filter']);
+
 Route::get('/indexreader', [BookTrackerController::class, 'indexreader']);
 
+Route::post('/indexreader', [BookTrackerController::class, 'reader_filter']);
+
 Route::get('/indextake', [BookTrackerController::class, 'indextake']);
+
+Route::post('/indextake', [BookTrackerController::class, 'take_filter']);
 
 Route::get('/past/{id}', [BookTrackerController::class, 'past']);
 
 Route::get('/history/{id}', [BookTrackerController::class, 'history']);
 
-Route::get('/fliter', [BookTrackerController::class, 'fliter']);
+// Route::post('indextake', [BookTrackerController::class, 'fliter'])->name('/filter');
 

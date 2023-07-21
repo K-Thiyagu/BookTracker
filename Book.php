@@ -25,8 +25,11 @@ class Book extends Model
     {
         return $this->hasMany(Takeout::class);
     }
-
-
+//search--->book name
+public function scopeFilterByName($query, $name)
+{
+    return $query->where('name', 'like', '%' . $name . '%');
+}
 
 
 }
